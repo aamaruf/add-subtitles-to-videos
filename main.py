@@ -99,7 +99,7 @@ def run():
     )
 
     add_subtitle_to_video(
-        soft_subtitle=True,
+        soft_subtitle=False,
         subtitle_file=subtitle_file,
         subtitle_language=language,
     )
