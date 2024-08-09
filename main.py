@@ -15,12 +15,12 @@ def extract_audio():
     return extracted_audio
 
 def transcribe(audio):
-    model = WhisperModel("large") # tiny / base / small / medium / large
+    model = WhisperModel("small") # tiny / base / small / medium / large
     segments, info = model.transcribe(audio)
     language = info[0]
     print("Transcription language detected", info[0])
-    language = 'en'
-    print("Transcription language generating", language)
+    sglanguage = 'en'
+    print("Transcription language generating", sglanguage)
     segments = list(segments)
     for segment in segments:
         # print(segment)
@@ -99,7 +99,7 @@ def run():
     )
 
     add_subtitle_to_video(
-        soft_subtitle=False,
+        soft_subtitle=True,
         subtitle_file=subtitle_file,
         subtitle_language=language,
     )
